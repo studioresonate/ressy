@@ -1,0 +1,59 @@
+@import 'normalize';
+@import 'layout';
+@import 'animation';
+
+body {
+  background-image: linear-gradient(0deg, #dbc63b 31%, #ebcad1 66%, #3ba2db 100%);
+}
+
+.wrapper {
+  &::after {
+    content: '';
+    position: absolute;
+    background-size: cover;
+    background-position: center bottom;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:url('../img/bg-trees.svg');
+    background-size: cover;
+    background-position: center bottom;
+    z-index: 1;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:url('../img/bg-trees2.svg');
+    background-size: cover;
+    background-position: center bottom;
+    z-index: 1;
+  }
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  border: 4px solid black;
+  padding: 16px 24px 15px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 24px;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  background: white;
+  background: linear-gradient(270deg, #baf307, #07f3cb, #f307e0);
+  background-size: 600% 600%;
+  animation: buttongradient 2s ease infinite;
+  box-shadow: 0 5px 0 black;
+}

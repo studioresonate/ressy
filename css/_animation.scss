@@ -1,0 +1,39 @@
+@keyframes buttongradient {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+@keyframes blink {
+  0% { filter:brightness(1) }
+  92% { filter:brightness(1) }
+  93% { filter:brightness(0) }
+  95% { filter:brightness(1) }
+}
+
+@keyframes dance {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.9);
+  }
+}
+
+.ressy {
+  .eyes {
+    animation: blink 8s infinite;
+  }
+  .mouth {
+    transform: scaleY(0.5) scaleX(1.2);
+  }
+  .body {
+    transform-origin: bottom;
+  }
+}
+
+.bounce {
+  .body {
+    animation: dance 3s reverse;
+  }
+}

@@ -1,0 +1,107 @@
+html,
+body,
+.wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  // background-color: black;
+}
+
+.btn {
+  z-index: 100;
+}
+
+.ressy {
+  // outline: 1px solid red;
+  height: 70%;
+  width: 600px;
+  position: relative;
+  margin-bottom: 3rem;
+  z-index: 20;
+  .body {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  .eyes {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    margin: 0 auto;
+    z-index: 10;
+  }
+  .mouth {
+    height: 25%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:40%;
+    margin: 0 auto;
+    z-index: 10;
+  }
+}
+
+.cloudWrapper {
+  width: 200px;
+  position: absolute;
+  top: 60px;
+  left:10%;
+  .cloudMouth {
+    width: 20px;
+    height: 20px;
+    background-color: #001c2f;
+    border-radius: 50%;
+    position: absolute;
+    top: 51%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.flower {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  z-index: 10;
+  width: 110px;
+  outline: 1px red solid;
+  transform-origin: bottom;
+  &.flower1 {
+    .stem {
+      padding-top: 40px;
+    }
+  }
+  .head {
+    img {
+      position: absolute;
+    }
+    .flowerMouth {
+      width: 10px;
+      height: 10px;
+      background-color: #001c2f;
+      border-radius: 50%;
+      top: 17%;
+      position: absolute;
+      left: 2px;
+      right: 0;
+      margin: 0 auto;
+      z-index: 20;
+    }
+  }
+}
