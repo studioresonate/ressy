@@ -74,34 +74,45 @@ body,
   }
 }
 
-.flower {
+.flowerWrapper {
   position: absolute;
   bottom: 0;
-  left: 20px;
-  z-index: 10;
-  width: 110px;
-  outline: 1px red solid;
-  transform-origin: bottom;
-  &.flower1 {
-    .stem {
-      padding-top: 40px;
+  left: 2rem;
+  .flower {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    z-index: 10;
+    width: 110px;
+    transform-origin: bottom;
+    &.flower1 {
+      .stem {
+        padding-top: 40px;
+      }
     }
-  }
-  .head {
-    img {
-      position: absolute;
+    &.flower2 {
+      left: 10rem;
+      bottom: -2rem;
+      .stem {
+        padding-top: 40px;
+      }
     }
-    .flowerMouth {
-      width: 10px;
-      height: 10px;
-      background-color: #001c2f;
-      border-radius: 50%;
-      top: 17%;
-      position: absolute;
-      left: 2px;
-      right: 0;
-      margin: 0 auto;
-      z-index: 20;
+    .head {
+      img {
+        position: absolute;
+      }
+      .flowerMouth {
+        width: 10px;
+        height: 10px;
+        background-color: #001c2f;
+        border-radius: 50%;
+        top: 17%;
+        position: absolute;
+        left: 2px;
+        right: 0;
+        margin: 0 auto;
+        z-index: 20;
+      }
     }
   }
 }

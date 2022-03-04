@@ -74,10 +74,12 @@ function draw(time) {
     // gsap.to('.bg', 1, { opacity: meter.volume } );
     gsap.to('.mouth', 1, {scaleY: -vol/250, ease: Expo.easeOut } );
     gsap.to('.cloudMouth', 3, { scaleY: -vol/250, ease: Expo.easeOut } );
-    gsap.to('.pedals', 4, { rotation: vol/2, ease: Expo.easeOut } );
+    gsap.to('.pedals1', 4, { rotation: vol/2, ease: Expo.easeOut } );
+    gsap.to('.pedals2', 6, { rotation: -vol/2, ease: Expo.easeOut } );
     // gsap.to('.flower2', 2, { rotationX: vol, ease: Expo.easeOut } );
     // gsap.to('.flower3', 2, { filter:'hue-rotate(' + vol + 'deg)', ease: Expo.easeOut } );
-    gsap.to('.flower', 2, { skewX: vol/80, ease: Expo.easeOut } );
+    gsap.to('.flower1', 2, { skewX: vol/80, ease: Expo.easeOut } );
+    gsap.to('.flower2', 4, { skewX: -vol/80, ease: Expo.easeOut } );
     gsap.to('.flowerMouth', 3, { scaleY: -vol/250, ease: Expo.easeOut } );
     // canvasContext.fillRect(0, HEIGHT - bar.height*2, WIDTH, bar.height*2);
 }

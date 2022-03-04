@@ -252,26 +252,40 @@ body,
   width: 100%;
 }
 
-.flower {
+.flowerWrapper {
   position: absolute;
   bottom: 0;
-  left: 20px;
+  left: 2rem;
+}
+
+.flowerWrapper .flower {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
   z-index: 10;
   width: 110px;
-  outline: 1px red solid;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
 }
 
-.flower.flower1 .stem {
+.flowerWrapper .flower.flower1 .stem {
   padding-top: 40px;
 }
 
-.flower .head img {
+.flowerWrapper .flower.flower2 {
+  left: 10rem;
+  bottom: -2rem;
+}
+
+.flowerWrapper .flower.flower2 .stem {
+  padding-top: 40px;
+}
+
+.flowerWrapper .flower .head img {
   position: absolute;
 }
 
-.flower .head .flowerMouth {
+.flowerWrapper .flower .head .flowerMouth {
   width: 10px;
   height: 10px;
   background-color: #001c2f;
