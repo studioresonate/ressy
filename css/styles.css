@@ -262,7 +262,7 @@ body,
   position: absolute;
   bottom: 0;
   left: 0px;
-  z-index: 10;
+  z-index: 30;
   width: 110px;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
@@ -270,6 +270,19 @@ body,
 
 .flowerWrapper .flower.flower1 .stem {
   padding-top: 40px;
+}
+
+.flowerWrapper .flower.flower1 .flowerMouth {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #001c2f;
+  top: 17%;
+  position: absolute;
+  left: 2px;
+  right: 0;
+  margin: 0 auto;
+  z-index: 20;
 }
 
 .flowerWrapper .flower.flower2 {
@@ -281,21 +294,43 @@ body,
   padding-top: 40px;
 }
 
-.flowerWrapper .flower .head img {
-  position: absolute;
-}
-
-.flowerWrapper .flower .head .flowerMouth {
+.flowerWrapper .flower.flower2 .flowerMouth {
   width: 10px;
   height: 10px;
-  background-color: #001c2f;
   border-radius: 50%;
+  background-color: #001c2f;
   top: 17%;
   position: absolute;
   left: 2px;
   right: 0;
   margin: 0 auto;
   z-index: 20;
+}
+
+.flowerWrapper .flower.flower3 {
+  left: 6rem;
+  width: 65px;
+}
+
+.flowerWrapper .flower.flower3 .stem {
+  padding-top: 40px;
+}
+
+.flowerWrapper .flower.flower3 .flowerMouth {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #001c2f;
+  top: 15%;
+  position: absolute;
+  left: 2px;
+  right: 0;
+  margin: 0 auto;
+  z-index: 20;
+}
+
+.flowerWrapper .flower .head img {
+  position: absolute;
 }
 
 @-webkit-keyframes buttongradient {

@@ -9,6 +9,7 @@ var minVolume = 20;
 var scaleFactor = maxVolume*5;
 var vol = 0;
 var wrapper = document.querySelector('.wrapper');
+var coachmark = document.querySelector('.coachmark');
 var body = document.querySelector('.body');
 // var canvas = document.getElementById("meter");
 // var canvasContext = canvas.getContext("2d");;
@@ -75,7 +76,7 @@ function draw(time) {
     gsap.to('.mouth', 1, {scaleY: -vol/250, ease: Expo.easeOut } );
     gsap.to('.cloudMouth', 3, { scaleY: -vol/250, ease: Expo.easeOut } );
     gsap.to('.pedals1', 4, { rotation: vol/2, ease: Expo.easeOut } );
-    gsap.to('.pedals2', 6, { rotation: -vol/2, ease: Expo.easeOut } );
+    gsap.to('.pedals2', 6, { rotation: -vol/1, ease: Expo.easeOut } );
     // gsap.to('.flower2', 2, { rotationX: vol, ease: Expo.easeOut } );
     // gsap.to('.flower3', 2, { filter:'hue-rotate(' + vol + 'deg)', ease: Expo.easeOut } );
     gsap.to('.flower1', 2, { skewX: vol/80, ease: Expo.easeOut } );
@@ -90,6 +91,7 @@ document.querySelector("button").addEventListener("click", function(e) {
     e.preventDefault();
     initAudioContext();
     this.style.visibility = "hidden";
+    coachmark.style.visibility = "hidden";
     wrapper.classList.add('start');
     // audioContext.resume().then(() => {
     //  console.log("Playback resumed successfully");

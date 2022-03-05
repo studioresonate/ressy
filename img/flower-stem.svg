@@ -3,15 +3,14 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 170.775 452.989" enable-background="new 0 0 170.775 452.989" xml:space="preserve">
 <g>
-	<path fill-rule="evenodd" clip-rule="evenodd" fill="#439400" d="M0.108,99.154c16.056-5.957,34.71-3.921,49.471,7.066
-		c14.761,10.987,22.065,28.271,20.967,45.362c-16.056,5.957-34.71,3.921-49.471-7.066C6.313,133.529-0.991,116.245,0.108,99.154"/>
-	<path fill-rule="evenodd" clip-rule="evenodd" fill="#439400" d="M170.712,131.546c-15.964-6.201-34.646-4.448-49.572,6.314
-		c-14.926,10.762-22.492,27.933-21.653,45.038c15.964,6.201,34.646,4.448,49.573-6.314
-		C163.986,165.823,171.551,148.651,170.712,131.546"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#0F1E06" d="M0.108,99.154c16.056-5.957,34.71-3.921,49.471,7.066
+		s22.065,28.271,20.967,45.362c-16.056,5.957-34.71,3.921-49.471-7.066C6.313,133.529-0.991,116.245,0.108,99.154"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#0F1E06" d="M170.712,131.546c-15.964-6.201-34.646-4.448-49.572,6.314
+		s-22.492,27.933-21.653,45.038c15.964,6.201,34.646,4.448,49.573-6.314C163.986,165.823,171.551,148.651,170.712,131.546"/>
 	
-		<rect x="72.547" y="140.059" transform="matrix(0.656 -0.7547 0.7547 0.656 -91.5165 109.8956)" fill-rule="evenodd" clip-rule="evenodd" fill="#439400" width="4.526" height="30.586"/>
+		<rect x="72.54" y="140.055" transform="matrix(0.656 -0.7547 0.7547 0.656 -91.5161 109.8913)" fill-rule="evenodd" clip-rule="evenodd" fill="#0F1E06" width="4.526" height="30.585"/>
 	
-		<rect x="79.872" y="184.34" transform="matrix(0.7646 -0.6445 0.6445 0.7646 -97.8661 105.2642)" fill-rule="evenodd" clip-rule="evenodd" fill="#439400" width="30.586" height="4.526"/>
-	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#439400" points="81.381,0 90.601,0.07 89.584,452.989 80.364,452.918 	"/>
+		<rect x="79.87" y="184.344" transform="matrix(0.7646 -0.6445 0.6445 0.7646 -97.8676 105.2594)" fill-rule="evenodd" clip-rule="evenodd" fill="#0F1E06" width="30.586" height="4.526"/>
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#0F1E06" points="81.381,0 90.601,0.07 89.584,452.989 80.364,452.918 	"/>
 </g>
 </svg>
