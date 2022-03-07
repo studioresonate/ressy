@@ -13,8 +13,27 @@ body,
   // background-color: black;
 }
 
-.btn {
+.coachmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
   z-index: 100;
+  li {
+    list-style-type: none;
+  }
+  &::after {
+    content: '';
+    position: static;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 }
 
 .ressy {

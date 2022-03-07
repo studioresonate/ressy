@@ -187,8 +187,30 @@ body,
           justify-content: center;
 }
 
-.btn {
+.coachmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  padding: 20px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 1rem;
   z-index: 100;
+}
+
+.coachmark li {
+  list-style-type: none;
+}
+
+.coachmark::after {
+  content: '';
+  position: static;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .ressy {
@@ -441,7 +463,18 @@ body {
   background-image: linear-gradient(0deg, #dbc63b 31%, #ebcad1 66%, #3ba2db 100%);
 }
 
+.wrapper {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+
 .wrapper::after {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
   content: '';
   position: absolute;
   background-size: cover;
@@ -457,6 +490,10 @@ body {
 }
 
 .wrapper::before {
+  -webkit-transform: scale(1.1) translateY(140px);
+          transform: scale(1.1) translateY(140px);
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
   content: '';
   position: absolute;
   top: 0;
@@ -469,14 +506,26 @@ body {
   z-index: 1;
 }
 
+.wrapper.start {
+  -webkit-transform: scale(1) translateY(0px);
+          transform: scale(1) translateY(0px);
+}
+
+.wrapper.start::after, .wrapper.start::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.coachmark {
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  -webkit-box-shadow: 0 10px 0px #000;
+          box-shadow: 0 10px 0px #000;
+  border: 4px solid black;
+}
+
 .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   color: white;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   border: 4px solid black;
   padding: 16px 24px 15px;
   border-radius: 20px;
@@ -485,7 +534,6 @@ body {
   cursor: pointer;
   font-weight: 600;
   font-size: 24px;
-  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   background: white;
   background: -webkit-gradient(linear, right top, left top, from(#baf307), color-stop(#07f3cb), to(#f307e0));
   background: linear-gradient(270deg, #baf307, #07f3cb, #f307e0);
