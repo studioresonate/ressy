@@ -103,6 +103,7 @@ body,
     left: 0px;
     z-index: 30;
     width: 110px;
+    display: flex;
     transform-origin: bottom;
     &.flower1 {
       .stem {

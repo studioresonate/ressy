@@ -11,18 +11,7 @@ var vol = 0;
 var wrapper = document.querySelector('.wrapper');
 var coachmark = document.querySelector('.coachmark');
 var body = document.querySelector('.body');
-// var canvas = document.getElementById("meter");
-// var canvasContext = canvas.getContext("2d");;
-// var WIDTH = document.documentElement.clientWidth;
-// var HEIGHT = document.documentElement.clientHeight;
 
-// var bar = {
-//     x: 0,
-//     y: 0,
-//     width: WIDTH,
-//     height: 0,
-//     fill: "#fff"
-// };
 
 function initAudioContext() {
     // monkeypatch Web Audio
@@ -36,7 +25,10 @@ function initAudioContext() {
     .then(function(stream) {
       gotStream(stream);
     })
-    .catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
+    .catch(function(err) {
+        console.log(err.name + ": " + err.message);
+        document.body.insertAdjacentHTML('afterbegin', '<div class="error mic">⚠️ Houston, we\'ve got a problem! Please allow microphone access.</div>')
+    }); // check for errors at the end.
 
 }
 
@@ -82,11 +74,10 @@ function draw(time) {
     gsap.to('.flower1', 2, { skewX: vol/80, ease: Expo.easeOut } );
     gsap.to('.flower2', 4, { skewX: -vol/80, ease: Expo.easeOut } );
     gsap.to('.flowerMouth', 3, { scaleY: -vol/250, ease: Expo.easeOut } );
-    // canvasContext.fillRect(0, HEIGHT - bar.height*2, WIDTH, bar.height*2);
 }
 
 
-// One-liner to resume playback when user interacted with the page.
+
 document.querySelector("button").addEventListener("click", function(e) {
     e.preventDefault();
     initAudioContext();

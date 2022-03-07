@@ -4,11 +4,15 @@
 @import 'animation';
 
 body {
-  background-image: linear-gradient(0deg, #dbc63b 31%, #ebcad1 66%, #3ba2db 100%);
+  // background-image: linear-gradient(0deg, #dbc63b 31%, #ebcad1 66%, #3ba2db 100%);
+    background-image:url('../img/bg-sky.svg');
+    background-size: cover;
+    background-position: center;
 }
 
 .wrapper {
-  transform: scale(1.5);
+  transform: scale(1.3) translateY(40px);
+  filter:blur(10px);
   transition: all 2s ease-out;
   &::after {
     transform: scale(1.2);
@@ -21,30 +25,32 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image:url('../img/bg-trees.svg');
+    // background-image:url('../img/bg-trees.svg');
+    background-image:url('../img/bg-foreground.svg');
     background-size: cover;
     background-position: center bottom;
     z-index: 1;
   }
-  &::before {
-    transform: scale(1.1) translateY(140px);
-    transition: all 2s ease-out;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:url('../img/bg-trees2.svg');
-    background-size: cover;
-    background-position: center bottom;
-    z-index: 1;
-  }
+  // &::before {
+  //   transform: scale(1.1) translateY(140px);
+  //   transition: all 2s ease-out;
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-image:url('../img/bg-trees2.svg');
+  //   background-size: cover;
+  //   background-position: center bottom;
+  //   z-index: 1;
+  // }
   &.start {
     transform: scale(1) translateY(0px);
+    filter:blur(0);
     &::after,
     &::before {
-      transform: scale(1);
+      transform: scale(1) translateY(0);
     }
   }
 }
@@ -53,22 +59,51 @@ body {
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   box-shadow: 0 10px 0px #000;
   border: 4px solid black;
+  text-align: center;
+  padding-bottom: 2rem;
+  h4 {
+    font-size: 2.2rem;
+    margin: 0;
+  }
+  ul {
+    text-align: left;
+    li {
+      padding-bottom: 0.4rem;
+      font-size: 1.2rem;
+    }
+  }
+  .btn {
+    color: white;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+    border: 4px solid black;
+    padding: 16px 24px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 24px;
+    background: white;
+    background: linear-gradient(270deg, #baf307, #07f3cb, #f307e0);
+    background-size: 600% 600%;
+    animation: buttongradient 2s ease infinite;
+    box-shadow: 0 5px 0 black;
+  }
 }
 
-.btn {
+
+
+.error {
+  width: 100%;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  z-index: 100;
+  background: red;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
   color: white;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
-  border: 4px solid black;
-  padding: 16px 24px 15px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  outline: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 24px;
-  background: white;
-  background: linear-gradient(270deg, #baf307, #07f3cb, #f307e0);
-  background-size: 600% 600%;
-  animation: buttongradient 2s ease infinite;
-  box-shadow: 0 5px 0 black;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  box-shadow: 0 4px 0 rgba(21, 24, 50, 0.6);
 }
