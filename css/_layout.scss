@@ -22,17 +22,12 @@ body,
   transform: translate(-50%, -50%);
   border-radius: 1rem;
   z-index: 100;
+  ul {
+    padding: 0;
+  }
   li {
     list-style-type: none;
-  }
-  &::after {
-    content: '';
-    position: static;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 0.3rem;
   }
 }
 

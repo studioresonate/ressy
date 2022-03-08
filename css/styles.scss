@@ -68,8 +68,10 @@ body {
   ul {
     text-align: left;
     li {
-      padding-bottom: 0.4rem;
       font-size: 1.2rem;
+      background-color: rgb(234, 234, 234);
+      padding: 10px 10px 10px 20px;
+      border-radius: 10px;
     }
   }
   .btn {

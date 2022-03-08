@@ -199,18 +199,13 @@ body,
   z-index: 100;
 }
 
-.coachmark li {
-  list-style-type: none;
+.coachmark ul {
+  padding: 0;
 }
 
-.coachmark::after {
-  content: '';
-  position: static;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+.coachmark li {
+  list-style-type: none;
+  margin-bottom: 0.3rem;
 }
 
 .ressy {
@@ -526,8 +521,10 @@ body {
 }
 
 .coachmark ul li {
-  padding-bottom: 0.4rem;
   font-size: 1.2rem;
+  background-color: #eaeaea;
+  padding: 10px 10px 10px 20px;
+  border-radius: 10px;
 }
 
 .coachmark .btn {

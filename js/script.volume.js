@@ -27,7 +27,7 @@ function initAudioContext() {
     })
     .catch(function(err) {
         console.log(err.name + ": " + err.message);
-        document.body.insertAdjacentHTML('afterbegin', '<div class="error mic">⚠️ Houston, we\'ve got a problem! Please allow microphone access.</div>')
+        document.body.insertAdjacentHTML('afterbegin', '<div class="error mic">⚠️ Houston, we have a problem! Please allow microphone access.</div>')
     }); // check for errors at the end.
 
 }
@@ -48,7 +48,7 @@ function gotStream(stream) {
 function draw(time) {
 
     vol = meter.volume * scaleFactor;
-
+    // max out volume
     if (vol > maxVolume) {
         vol = maxVolume;
         console.log('bounce');
@@ -62,7 +62,6 @@ function draw(time) {
         vol = minVolume;
     }
 
-    // // Animate the css var
     // gsap.to(":root", 1, { "--myWeight": vol, ease: Expo.easeOut });
     // gsap.to('.bg', 1, { opacity: meter.volume } );
     gsap.to('.mouth', 1, {scaleY: -vol/250, ease: Expo.easeOut } );
@@ -179,6 +178,4 @@ function volumeAudioProcess(event) {
 }
 
 
-var cloudWrapper = document.querySelector('.cloudWrapper')
-// gsap.to(cloudWrapper, 30, {left:"80%", repeat:100, yoyo:true, ease: "power2.inOut"});
-gsap.to(cloudWrapper, { duration: 30, repeat:100, ease: "power1.inOut", yoyo:true, left:"80%" });
+gsap.to('.cloudWrapper', { duration: 30, repeat:-1, ease: "power1.inOut", yoyo:true, left:"80%" });
