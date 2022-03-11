@@ -580,4 +580,23 @@ body {
   height: 200px;
   z-index: 100;
 }
+
+.splat .flowerMouth,
+.splat .cloudMouth {
+  -webkit-transform: scale(1) !important;
+          transform: scale(1) !important;
+}
+
+.splat .cloudWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  width: 143px;
+  height: 100px;
+  background-size: cover;
+  -webkit-transform: rotate(-7.5deg);
+          transform: rotate(-7.5deg);
+  background: url("../img/ressy-eyes.png") 0 0/cover no-repeat;
+}
 /*# sourceMappingURL=styles.css.map */

@@ -88,6 +88,7 @@ document.querySelector("button").addEventListener("click", function(e) {
     coachmark.style.visibility = "hidden";
     wrapper.classList.add('start');
 
+    // no ressy
     var keypattern = [
         "n", "o", "r", "e", "s", "s", "y"
     ];
@@ -106,6 +107,7 @@ document.querySelector("button").addEventListener("click", function(e) {
                 audio.play();
                 window.removeEventListener("onkeydown", this.keypattern);
                 weight.style.visibility = 'visible';
+                document.body.classList.add('splat');
             }
         } else {
             // reset if incorrect
@@ -116,8 +118,10 @@ document.querySelector("button").addEventListener("click", function(e) {
 
     reset.addEventListener("click", function() {
         console.log('resetting');
+        gsap.to('.ressy', 0.1, {scaleY: "1",opacity:"1" } );
         weight.style.visibility = 'hidden';
         weight.style.bottom = '900rem';
+        document.body.classList.remove('splat');
         index = 0;
     })
 });

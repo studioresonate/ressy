@@ -25,26 +25,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    // background-image:url('../img/bg-trees.svg');
     background-image:url('../img/bg-foreground.svg');
     background-size: cover;
     background-position: center bottom;
     z-index: 1;
   }
-  // &::before {
-  //   transform: scale(1.1) translateY(140px);
-  //   transition: all 2s ease-out;
-  //   content: '';
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background-image:url('../img/bg-trees2.svg');
-  //   background-size: cover;
-  //   background-position: center bottom;
-  //   z-index: 1;
-  // }
   &.start {
     transform: scale(1) translateY(0px);
     filter:blur(0);
@@ -120,4 +105,24 @@ body {
   width: 200px;
   height: 200px;
   z-index: 100;
+}
+
+.splat {
+  .flowerMouth,
+  .cloudMouth {
+    transform: scale(1) !important;
+  }
+  .cloudWrapper {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 1.5rem;
+      width: 143px;
+      height: 100px;
+      background-size: cover;
+      transform: rotate(-7.5deg);
+      background: url('../img/ressy-eyes.png') 0 0 / cover no-repeat;
+    }
+  }
 }
