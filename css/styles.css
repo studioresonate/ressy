@@ -437,6 +437,11 @@ body,
   }
 }
 
+.ressy {
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
 .ressy .eyes {
   -webkit-animation: blink 8s infinite;
           animation: blink 8s infinite;

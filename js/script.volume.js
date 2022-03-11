@@ -81,40 +81,34 @@ document.querySelector("button").addEventListener("click", function(e) {
     e.preventDefault();
     initAudioContext();
 
-    const weight = document.querySelector('.weight');
-    const reset = document.querySelector('.reset');
+    var weight = document.querySelector('.weight');
+    var reset = document.querySelector('.reset');
 
     this.style.visibility = "hidden";
     coachmark.style.visibility = "hidden";
     wrapper.classList.add('start');
-    // audioContext.resume().then(() => {
-    //  console.log("Playback resumed successfully");
-    //  this.style.visibility = "hidden";
-    // });
 
-    const keypattern = [
-        "n",
-        "o",
-        "r",
-        "e",
-        "s",
-        "s",
-        "y"
+    var keypattern = [
+        "n", "o", "r", "e", "s", "s", "y"
     ];
     let index = 0;
     window.onkeydown = function(e) {
-        const key = e.key;
-        const audio = new Audio('../sound/fall.mp3');
+        var key = e.key;
+        var audio = new Audio('../sound/fall.mp3');
         if (key === keypattern[index]) {
             index++;
             if (index === keypattern.length) {
-                gsap.to('.weight', 0.3, {bottom: "3rem" } );
+                // weight drop
+                gsap.to('.weight', 0.5, {bottom: "3rem" } );
+                // ressy splat
+                gsap.to('.ressy', 0.1, {scaleY: "0.01",opacity:"0" } ).delay(0.4);
+
                 audio.play();
                 window.removeEventListener("onkeydown", this.keypattern);
                 weight.style.visibility = 'visible';
-                // index = 0;
             }
         } else {
+            // reset if incorrect
             index = 0;
         }
     }
