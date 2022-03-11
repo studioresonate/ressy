@@ -563,4 +563,16 @@ body {
   -webkit-box-shadow: 0 4px 0 rgba(21, 24, 50, 0.6);
           box-shadow: 0 4px 0 rgba(21, 24, 50, 0.6);
 }
+
+.weight {
+  position: absolute;
+  bottom: 900rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  z-index: 100;
+}
 /*# sourceMappingURL=styles.css.map */

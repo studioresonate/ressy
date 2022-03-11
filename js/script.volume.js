@@ -80,6 +80,10 @@ function draw(time) {
 document.querySelector("button").addEventListener("click", function(e) {
     e.preventDefault();
     initAudioContext();
+
+    const weight = document.querySelector('.weight');
+    const reset = document.querySelector('.reset');
+
     this.style.visibility = "hidden";
     coachmark.style.visibility = "hidden";
     wrapper.classList.add('start');
@@ -87,6 +91,41 @@ document.querySelector("button").addEventListener("click", function(e) {
     //  console.log("Playback resumed successfully");
     //  this.style.visibility = "hidden";
     // });
+
+    const keypattern = [
+        "n",
+        "o",
+        "r",
+        "e",
+        "s",
+        "s",
+        "y"
+    ];
+    let index = 0;
+    window.onkeydown = function(e) {
+        const key = e.key;
+        const audio = new Audio('../sound/fall.mp3');
+        if (key === keypattern[index]) {
+            index++;
+            if (index === keypattern.length) {
+                gsap.to('.weight', 0.3, {bottom: "3rem" } );
+                audio.play();
+                window.removeEventListener("onkeydown", this.keypattern);
+                weight.style.visibility = 'visible';
+                // index = 0;
+            }
+        } else {
+            index = 0;
+        }
+    }
+
+
+    reset.addEventListener("click", function() {
+        console.log('resetting');
+        weight.style.visibility = 'hidden';
+        weight.style.bottom = '900rem';
+        index = 0;
+    })
 });
 
 /*
@@ -179,3 +218,5 @@ function volumeAudioProcess(event) {
 
 
 gsap.to('.cloudWrapper', { duration: 30, repeat:-1, ease: "power1.inOut", yoyo:true, left:"80%" });
+
+
