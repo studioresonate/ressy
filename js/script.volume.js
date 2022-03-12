@@ -81,7 +81,7 @@ document.querySelector("button").addEventListener("click", function(e) {
     e.preventDefault();
     initAudioContext();
 
-    var weight = document.querySelector('.weight');
+    var boulder = document.querySelector('.boulder');
     var reset = document.querySelector('.reset');
 
     this.style.visibility = "hidden";
@@ -99,14 +99,15 @@ document.querySelector("button").addEventListener("click", function(e) {
         if (key === keypattern[index]) {
             index++;
             if (index === keypattern.length) {
-                // weight drop
-                gsap.to('.weight', 0.5, {bottom: "3rem" } );
+                // boulder drop
+                gsap.to('.boulder', 0.5, {bottom: "3rem" } );
                 // ressy splat
                 gsap.to('.ressy', 0.1, {scaleY: "0.01",opacity:"0" } ).delay(0.4);
+                gsap.to('.reset', 0.5, {opacity:"1",visibility:"visible" } ).delay(1.5);
 
                 audio.play();
                 window.removeEventListener("onkeydown", this.keypattern);
-                weight.style.visibility = 'visible';
+                boulder.style.visibility = 'visible';
                 document.body.classList.add('splat');
             }
         } else {
@@ -119,9 +120,11 @@ document.querySelector("button").addEventListener("click", function(e) {
     reset.addEventListener("click", function() {
         console.log('resetting');
         gsap.to('.ressy', 0.1, {scaleY: "1",opacity:"1" } );
-        weight.style.visibility = 'hidden';
-        weight.style.bottom = '900rem';
+        boulder.style.visibility = 'hidden';
+        boulder.style.bottom = '900rem';
         document.body.classList.remove('splat');
+        reset.style.opacity = 0;
+        reset.style.visibility = 'hidden';
         index = 0;
     })
 });
