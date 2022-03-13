@@ -11,6 +11,8 @@ var vol = 0;
 var wrapper = document.querySelector('.wrapper');
 var coachmark = document.querySelector('.coachmark');
 var body = document.querySelector('.body');
+// set no ressy to false
+var played = false;
 
 
 function initAudioContext() {
@@ -100,15 +102,18 @@ document.querySelector("button").addEventListener("click", function(e) {
             index++;
             if (index === keypattern.length) {
                 // boulder drop
-                gsap.to('.boulder', 0.5, {bottom: "3rem" } );
+                gsap.to('.boulder', 0.5, {bottom: "3rem",visibility:"visible" } );
                 // ressy splat
                 gsap.to('.ressy', 0.1, {scaleY: "0.01",opacity:"0" } ).delay(0.4);
-                gsap.to('.reset', 0.5, {opacity:"1",visibility:"visible" } ).delay(1.5);
-
-                audio.play();
+                if (played === false) {
+                    gsap.to('.reset', 0.5, {opacity:"1",visibility:"visible" } ).delay(1.5);
+                    audio.play();
+                }
                 window.removeEventListener("onkeydown", this.keypattern);
-                boulder.style.visibility = 'visible';
+                // boulder.style.visibility = 'visible';
                 document.body.classList.add('splat');
+                played = true;
+                index = 0;
             }
         } else {
             // reset if incorrect
@@ -118,14 +123,16 @@ document.querySelector("button").addEventListener("click", function(e) {
 
 
     reset.addEventListener("click", function() {
-        console.log('resetting');
-        gsap.to('.ressy', 0.1, {scaleY: "1",opacity:"1" } );
-        boulder.style.visibility = 'hidden';
-        boulder.style.bottom = '900rem';
         document.body.classList.remove('splat');
-        reset.style.opacity = 0;
-        reset.style.visibility = 'hidden';
+        gsap.to('.ressy', 0.1, {scaleY: "1",opacity:"1" } );
+        gsap.to('.boulder', {bottom: "900rem", visibility:"hidden" } );
+        gsap.to('.reset', {opacity: "0", visibility:"hidden" } );
+        // boulder.style.visibility = 'hidden';
+        // boulder.style.bottom = '900rem';
+        // reset.style.opacity = 0;
+        // reset.style.visibility = 'hidden';
         index = 0;
+        played = false;
     })
 });
 
