@@ -83,7 +83,7 @@ document.querySelector("button").addEventListener("click", function(e) {
     e.preventDefault();
     initAudioContext();
 
-    var boulder = document.querySelector('.boulder');
+    // var boulder = document.querySelector('.boulder');
     var reset = document.querySelector('.reset');
 
     this.style.visibility = "hidden";
@@ -110,7 +110,6 @@ document.querySelector("button").addEventListener("click", function(e) {
                     audio.play();
                 }
                 window.removeEventListener("onkeydown", this.keypattern);
-                // boulder.style.visibility = 'visible';
                 document.body.classList.add('splat');
                 played = true;
                 index = 0;
@@ -127,10 +126,6 @@ document.querySelector("button").addEventListener("click", function(e) {
         gsap.to('.ressy', 0.1, {scaleY: "1",opacity:"1" } );
         gsap.to('.boulder', {bottom: "900rem", visibility:"hidden" } );
         gsap.to('.reset', {opacity: "0", visibility:"hidden" } );
-        // boulder.style.visibility = 'hidden';
-        // boulder.style.bottom = '900rem';
-        // reset.style.opacity = 0;
-        // reset.style.visibility = 'hidden';
         index = 0;
         played = false;
     })
@@ -225,6 +220,6 @@ function volumeAudioProcess(event) {
 }
 
 
-gsap.to('.cloudWrapper', { duration: 30, repeat:-1, ease: "power1.inOut", yoyo:true, left:"80%" });
+gsap.to('.cloudWrapper', { duration: 30, repeat:-1, ease: "power1.inOut", yoyo:true, left:"70%" });
 
 

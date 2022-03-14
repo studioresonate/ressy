@@ -78,6 +78,9 @@ body {
   background-size: 600% 600%;
   animation: buttongradient 2s ease infinite;
   box-shadow: 0 5px 0 black;
+  &:active {
+    transform: translateY(3px)
+  }
 }
 
 
