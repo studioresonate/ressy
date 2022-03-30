@@ -11,6 +11,12 @@
   95% { filter:brightness(1) }
 }
 
+@keyframes cloud {
+  0% {left: 10%}
+  50% {left: 80%}
+  100% {left: 10%}
+}
+
 @keyframes dance {
   0% {
     transform: scaleY(1);
@@ -20,16 +26,37 @@
   }
 }
 
+@keyframes ressySmash {
+  0% {
+    transform: scaleY(1);
+
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0.1);
+  }
+}
+
 .ressy {
   transform-origin: bottom;
   .eyes {
     animation: blink 8s infinite;
   }
   .mouth {
-    transform: scaleY(0.5) scaleX(1.2);
+    // transform: scaleY(var(--volume)) scaleX(1.2);
+    transform: translate3d(0px, 0px, 0px) scale(1,var(--volume)) rotate(24deg);
+    // transform: scaleX(1.2);
+    // height: var(--volume);
+    transition: all 100ms ease-out;
   }
   .body {
     transform-origin: bottom;
+  }
+  .splat & {
+    animation: ressySmash 0.1s 0.4s forwards;
   }
 }
 
@@ -38,3 +65,8 @@
     animation: dance 3s reverse;
   }
 }
+
+.cloudWrapper {
+  animation: cloud 30s ease-in-out infinite;
+}
+

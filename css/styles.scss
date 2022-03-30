@@ -3,6 +3,13 @@
 @import 'layout';
 @import 'animation';
 
+:root {
+  --volume: 0.1;
+  --white: #fff;
+  --black: #000;
+  --error: #c30000;
+}
+
 body {
   // background-image: linear-gradient(0deg, #dbc63b 31%, #ebcad1 66%, #3ba2db 100%);
     background-image:url('../img/bg-sky.svg');
@@ -43,7 +50,7 @@ body {
 .coachmark {
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   box-shadow: 0 10px 0px #000;
-  border: 4px solid black;
+  border: 4px solid var(--black);
   text-align: center;
   padding-bottom: 2rem;
   h4 {
@@ -63,9 +70,9 @@ body {
 
 .btn {
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-  color: white;
+  color: var(--white);
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
-  border: 4px solid black;
+  border: 4px solid var(--black);
   padding: 16px 24px 15px;
   border-radius: 20px;
   text-transform: uppercase;
@@ -73,11 +80,11 @@ body {
   cursor: pointer;
   font-weight: 600;
   font-size: 24px;
-  background: white;
+  background: #f307e0;
   background: linear-gradient(270deg, #baf307, #07f3cb, #f307e0);
   background-size: 600% 600%;
   animation: buttongradient 2s ease infinite;
-  box-shadow: 0 5px 0 black;
+  box-shadow: 0 5px 0 var(--black);
   &:active {
     transform: translateY(3px)
   }
@@ -88,11 +95,11 @@ body {
   width: 100%;
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   z-index: 100;
-  background: red;
+  background: var(--error);
   padding: 10px;
   width: 100%;
   text-align: center;
-  color: white;
+  color: var(--white);
   z-index: 100;
   position: absolute;
   top: 0;
@@ -108,8 +115,13 @@ body {
   width: 310px;
   z-index: 10;
   text-align: center;
+  transition: all 0.5s;
   img {
     width: 100%;
+  }
+  .splat & {
+    bottom: 3rem;
+    visibility: visible;
   }
 }
 
@@ -139,4 +151,16 @@ body {
       background: url('../img/ressy-eyes.png') 0 0 / cover no-repeat;
     }
   }
+}
+
+#volume-visualizer {
+  // width: var(--volume);
+  width: calc(var(--volume) / 2);
+   background-color: red;
+   transition: width 100ms linear;
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 20px;
+   z-index: 100;
 }
