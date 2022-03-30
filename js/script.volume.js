@@ -121,8 +121,3 @@ document.querySelector("button").addEventListener("click", function(e) {
 });
 
 
-
-
-// gsap.to('.cloudWrapper', { duration: 30, repeat:-1, ease: "power1.inOut", yoyo:true, left:"70%" });
-
-
