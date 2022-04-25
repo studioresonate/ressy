@@ -33,11 +33,16 @@ body,
 
 .ressy {
   // outline: 1px solid red;
-  height: 70%;
-  width: 600px;
+  height: 57%;
+  width: 98%;
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 7rem;
   z-index: 20;
+  @include for-tablet-portrait-up {
+    height: 70%;
+    width: 600px;
+    margin-bottom: 3rem;
+  }
   .body {
     height: 100%;
     position: absolute;
@@ -91,7 +96,10 @@ body,
 .flowerWrapper {
   position: absolute;
   bottom: 0;
-  left: 2rem;
+  left: 0;
+  @include for-tablet-portrait-up {
+    left: 2rem;
+  }
   .flower {
     position: absolute;
     bottom: 0;
@@ -100,6 +108,10 @@ body,
     width: 110px;
     display: flex;
     transform-origin: bottom;
+    transform: scale(0.7) !important;
+    @include for-tablet-portrait-up {
+      transform: scale(1) !important;
+    }
     &.flower1 {
       .stem {
         padding-top: 40px;
@@ -115,8 +127,11 @@ body,
       }
     }
     &.flower2 {
-      left: 10rem;
+      left: 6rem;
       bottom: -2rem;
+      @include for-tablet-portrait-up {
+        left: 10rem;
+      }
       .stem {
         padding-top: 40px;
       }
@@ -131,8 +146,11 @@ body,
       }
     }
     &.flower3 {
-      left: 6rem;
+      left: 4rem;
       width: 65px;
+      @include for-tablet-portrait-up {
+        left: 6rem;
+      }
       .stem {
         padding-top: 40px;
       }
